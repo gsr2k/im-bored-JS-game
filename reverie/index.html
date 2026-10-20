@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reverie</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <main id="game-container">
+
+        <!-- Menu inicial -->
+        <section id="main-menu">
+            <h1>Reverie</h1>
+            <p>Um pequeno mundo de sonhos.</p>
+
+            <form id="player-form">
+                <label for="player-name">Nome do jogador</label>
+
+                <input
+                    type="text"
+                    id="player-name"
+                    name="playerName"
+                    placeholder="Digite seu nome"
+                    maxlength="20"
+                    required
+                >
+
+                <button type="submit">Começar</button>
+            </form>
+
+            <button id="options-button" type="button">
+                Opções
+            </button>
+
+            <button id="about-button" type="button">
+                Sobre
+            </button>
+        </section>
+
+        <!-- Área principal do jogo -->
+        <section id="game-screen" hidden>
+
+            <header id="game-header">
+                <span id="scene-name">O Quarto</span>
+
+                <button id="pause-button" type="button">
+                    Pausar
+                </button>
+            </header>
+
+            <canvas id="game-canvas" width="800" height="600">
+                Seu navegador não suporta o elemento Canvas.
+            </canvas>
+
+            <footer id="game-interface">
+                <p id="interaction-message" aria-live="polite">
+                    Explore o ambiente.
+                </p>
+
+                <p id="discovery-counter">
+                    Descobertas: 0
+                </p>
+            </footer>
+
+        </section>
+
+        <!-- Menu de pausa -->
+        <section id="pause-menu" hidden>
+            <h2>Jogo pausado</h2>
+
+            <button id="resume-button" type="button">
+                Continuar
+            </button>
+
+            <button id="return-menu-button" type="button">
+                Voltar ao menu
+            </button>
+        </section>
+
+        <!-- Tela sobre o jogo -->
+        <section id="about-menu" hidden>
+            <h2>Sobre Reverie</h2>
+
+            <p>
+                Explore lugares estranhos e descubra seus segredos.
+            </p>
+
+            <button id="back-button" type="button">
+                Voltar
+            </button>
+        </section>
+
+        <!-- Menu de opções -->
+        <section id="options-menu" hidden>
+            <h2>Opções</h2>
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="show-messages"
+                    checked
+                >
+                Mostrar mensagens de interação
+            </label>
+
+            <button id="options-back-button" type="button">
+                Voltar
+            </button>
+        </section>
+
+    </main>
+
+    <!-- Arquivos JavaScript -->
+    <script src="js/collision.js"></script>
+    <script src="js/scenes.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/interaction.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
