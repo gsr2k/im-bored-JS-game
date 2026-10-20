@@ -1,4 +1,3 @@
-
 const mainMenu = document.getElementById("main-menu");
 const gameScreen = document.getElementById("game-screen");
 const aboutMenu = document.getElementById("about-menu");

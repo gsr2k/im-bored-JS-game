@@ -26,7 +26,7 @@ function gameLoop(currentTime) {
     previousTime = currentTime;
 
     updatePlayer(deltaTime);
-
+    keepPlayerInsideCanvas (player, canvas);
     drawGame();
 
     requestAnimationFrame(gameLoop);

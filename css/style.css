@@ -1,0 +1,307 @@
+
+/* =========================
+   1. Configurações gerais
+   ========================= */
+
+:root {
+    --background: #f4f1fa;
+    --surface: #ffffff;
+    --surface-hover: #eeebf7;
+
+    --primary: #9b82d1;
+    --primary-hover: #8669c2;
+
+    --text: #302b3d;
+    --text-muted: #827b91;
+
+    --border: #e4deef;
+    --shadow: 0 12px 40px rgba(64, 48, 99, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 32px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--background);
+    color: var(--text);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   2. Estrutura principal
+   ========================= */
+
+#game-container {
+    width: 100%;
+    max-width: 900px;
+    min-height: 420px;
+
+    padding: 40px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+/* Esconde as telas inativas */
+
+[hidden] {
+    display: none !important;
+}
+
+/* =========================
+   3. Títulos e textos
+   ========================= */
+
+h1,
+h2 {
+    margin-top: 0;
+    color: var(--text);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin-bottom: 12px;
+    font-size: 48px;
+    letter-spacing: 5px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+#main-menu > p,
+#about-menu > p {
+    color: var(--text-muted);
+}
+
+/* =========================
+   4. Formulário inicial
+   ========================= */
+
+#player-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    max-width: 360px;
+    margin: 32px 0 24px;
+}
+
+label {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 13px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+
+    background: #fcfbfe;
+    color: var(--text);
+
+    font-size: 15px;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(155, 130, 209, 0.15);
+}
+
+/* =========================
+   5. Botões
+   ========================= */
+
+button {
+    padding: 11px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    font-size: 14px;
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        border-color 0.2s,
+        transform 0.2s;
+}
+
+button:hover {
+    background: var(--surface-hover);
+    border-color: #cfc2e7;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#player-form button {
+    width: 100%;
+
+    border-color: var(--primary);
+    background: var(--primary);
+    color: white;
+}
+
+#player-form button:hover {
+    border-color: var(--primary-hover);
+    background: var(--primary-hover);
+}
+
+#main-menu > button {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   6. Tela do jogo
+   ========================= */
+
+#game-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    margin-bottom: 16px;
+}
+
+#scene-name {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+#game-canvas {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: #f1eff8;
+    image-rendering: pixelated;
+}
+
+/* =========================
+   7. Interface inferior
+   ========================= */
+
+#game-interface {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 14px;
+}
+
+#interaction-message,
+#discovery-counter {
+    margin: 0;
+    font-size: 14px;
+}
+
+#interaction-message {
+    color: var(--text-muted);
+}
+
+#discovery-counter {
+    color: var(--primary-hover);
+}
+
+/* =========================
+   8. Menus secundários
+   ========================= */
+
+#about-menu,
+#options-menu,
+#pause-menu {
+    padding: 12px 0;
+}
+
+#options-menu label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 24px 0;
+    color: var(--text);
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+/* =========================
+   9. Acessibilidade
+   ========================= */
+
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+/* =========================
+   10. Telas menores
+   ========================= */
+
+@media (max-width: 600px) {
+    body {
+        padding: 16px 10px;
+    }
+
+    #game-container {
+        min-height: auto;
+        padding: 24px 18px;
+        border-radius: 14px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    #game-interface {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
